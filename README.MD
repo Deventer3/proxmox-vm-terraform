@@ -8,23 +8,23 @@
 
 `main.tf`:
 ```hcl
-module {
-    source = "github.com/Deventer3/proxmox-vm-terraform"
+module "vm" {
+  source = "github.com/Deventer3/proxmox-vm-terraform"
 
-    ve_node = "vm13010"
-    clone_id = 9001
+  pve_node = "VM13010"
+  clone_id = 9001
 
-    qemu_agent = true
-    
-    vm_hostname = "test"
+  qemu_agent = true
 
-    gateway = 10.24.103.1
-    ip_address = 10.24.103.11
-    vlan = 1301
+  vm_hostname = "test"
 
-    vm_cores = 2
-    vm_ram = 2048
-    disk_size = 16 #GB
+  gateway    = "10.24.103.1"
+  ip_address = "10.24.103.11/24"
+  vlan_id    = 1301
+
+  vm_cores  = 2
+  vm_ram    = 2048
+  disk_size = 16 #GB
 
 }
 ```

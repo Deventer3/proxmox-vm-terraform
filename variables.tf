@@ -1,16 +1,16 @@
 variable "pve_node" {
   type = string
   validation {
-    condition = contains(["VM13010", "VM13011", "VM13012"], var.pve_node)
+    condition     = contains(["VM13010", "VM13011", "VM13012"], var.pve_node)
     error_message = "Must be a valid node in the cluster: VM13010, VM13011, VM13012"
   }
 }
 variable "pve_datastore" {
-    type = string
-    default = "local-lvm"
+  type    = string
+  default = "local-lvm"
 }
 variable "pve_bridge" {
-  type = string
+  type    = string
   default = "vmbr0"
 }
 variable "gateway" {
@@ -27,7 +27,7 @@ variable "ip_address" {
 variable "vlan_id" {
   type = number
   validation {
-    condition     = (
+    condition = (
       var.vlan_id >= 2 &&
       var.vlan_id <= 4094
     )
@@ -35,22 +35,22 @@ variable "vlan_id" {
   }
 }
 variable "clone_id" {
-  type = number
+  type    = number
   default = 9003
 }
 variable "vm_hostname" {
   type = string
 }
 variable "qemu_agent" {
-  type = bool
+  type    = bool
   default = true
 }
 variable "vm_cores" {
-  type = number
+  type    = number
   default = 2
 
   validation {
-    condition     = (
+    condition = (
       var.vm_cores >= 2 &&
       var.vm_cores <= 8
     )
@@ -58,11 +58,11 @@ variable "vm_cores" {
   }
 }
 variable "vm_ram" {
-  type = number
+  type    = number
   default = 2048
-  
+
   validation {
-    condition     = (
+    condition = (
       var.vm_ram >= 512 &&
       var.vm_ram <= 8192
     )
@@ -70,11 +70,11 @@ variable "vm_ram" {
   }
 }
 variable "disk_size" {
-  type = number
+  type    = number
   default = 16
-  
+
   validation {
-    condition     = (
+    condition = (
       var.disk_size >= 8 &&
       var.disk_size <= 64
     )
