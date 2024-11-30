@@ -5,6 +5,8 @@
 - terraform >= 1.8
 
 ## Usage:
+
+`main.tf`:
 ```hcl
 module {
     source = "github.com/Deventer3/proxmox-vm-terraform"
@@ -25,4 +27,10 @@ module {
     disk_size = 16 #GB
 
 }
+```
+
+```shell
+terraform init
+terraform plan
+terraform apply
 ```
