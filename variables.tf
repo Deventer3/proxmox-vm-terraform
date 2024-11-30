@@ -81,3 +81,10 @@ variable "disk_size" {
     error_message = "The dont use too much GB's"
   }
 }
+variable "vm_username" {
+  type    = string
+  default = "ansible"
+}
+variable "sshkeys" {
+  type = list(string)
+}

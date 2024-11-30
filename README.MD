@@ -17,6 +17,8 @@ module "vm" {
   qemu_agent = true
 
   vm_hostname = "test"
+  vm_username = "ansible"
+  sshkeys = [" SSH PUBLIC KEY "]
 
   gateway    = "10.24.103.1"
   ip_address = "10.24.103.11/24"

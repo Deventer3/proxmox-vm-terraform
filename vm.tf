@@ -28,6 +28,11 @@ resource "proxmox_virtual_environment_vm" "vm" {
   initialization {
     datastore_id = var.pve_datastore
 
+    user_account {
+      username = var.vm_username
+      keys     = var.sshkeys
+    }
+
     ip_config {
       ipv4 {
         address = "${var.ip_address}/24"
