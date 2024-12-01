@@ -15,11 +15,6 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   stop_on_destroy = true
 
-  clone {
-    datastore_id = var.pve_datastore
-    vm_id        = var.clone_id
-  }
-
   cpu {
     cores = var.vm_cores
     type  = "x86-64-v2-AES"
@@ -43,8 +38,12 @@ resource "proxmox_virtual_environment_vm" "vm" {
   }
 
   disk {
-    interface = "virtio0"
-    size      = var.disk_size
+    datastore_id = var.pve_datastore
+    file_id      = "local:iso/noble-server-cloudimg-amd64.img"
+    interface    = "virtio0"
+    iothread     = true
+    discard      = "on"
+    size         = var.disk_size
   }
 
   network_device {

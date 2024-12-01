@@ -12,7 +12,6 @@ module "vm" {
   source = "github.com/Deventer3/proxmox-vm-terraform"
 
   pve_node = "VM13010"
-  clone_id = 9001
 
   qemu_agent = true
 

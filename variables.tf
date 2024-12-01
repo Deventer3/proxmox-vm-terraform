@@ -34,10 +34,6 @@ variable "vlan_id" {
     error_message = "The vlan_id must be a valid VLAN"
   }
 }
-variable "clone_id" {
-  type    = number
-  default = 9003
-}
 variable "vm_hostname" {
   type = string
 }
