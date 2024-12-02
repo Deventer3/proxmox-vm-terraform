@@ -12,6 +12,9 @@ resource "proxmox_virtual_environment_vm" "vm" {
   agent {
     enabled = var.qemu_agent
   }
+  clone {
+    vm_id = var.clone_id
+  }
 
   stop_on_destroy = true
 
@@ -38,8 +41,6 @@ resource "proxmox_virtual_environment_vm" "vm" {
   }
 
   disk {
-    datastore_id = var.pve_datastore
-    file_id      = "local:iso/noble-server-cloudimg-amd64.img"
     interface    = "virtio0"
     iothread     = true
     discard      = "on"

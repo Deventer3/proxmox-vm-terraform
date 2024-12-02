@@ -16,6 +16,10 @@ variable "pve_bridge" {
 variable "gateway" {
   type = string
 }
+variable "clone_id" {
+  type = number
+  default = 9001
+}
 variable "ip_address" {
   type = string
 
