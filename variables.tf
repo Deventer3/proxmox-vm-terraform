@@ -7,7 +7,7 @@ variable "pve_node" {
 }
 variable "pve_datastore" {
   type    = string
-  default = "local-lvm"
+  default = "local-zfs"
 }
 variable "pve_bridge" {
   type    = string
