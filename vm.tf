@@ -45,6 +45,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
     iothread     = true
     discard      = "on"
     size         = var.disk_size
+    datastore_id = var.pve_datastore
   }
 
   network_device {
