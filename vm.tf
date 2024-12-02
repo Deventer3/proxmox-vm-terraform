@@ -30,7 +30,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
     ip_config {
       ipv4 {
-        address = "${var.ip_address}/24"
+        address = "${var.ip_address}"
         gateway = var.gateway
       }
     }
