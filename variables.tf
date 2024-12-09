@@ -32,7 +32,7 @@ variable "vlan_id" {
   type = number
   validation {
     condition = (
-      var.vlan_id >= 2 &&
+      var.vlan_id >= 1 &&
       var.vlan_id <= 4094
     )
     error_message = "The vlan_id must be a valid VLAN"
