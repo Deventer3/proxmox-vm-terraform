@@ -8,6 +8,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   node_name = var.pve_node
   migrate   = true
+  tags 	    = var.vm_tags
 
   agent {
     enabled = var.qemu_agent
@@ -21,6 +22,15 @@ resource "proxmox_virtual_environment_vm" "vm" {
   cpu {
     cores = var.vm_cores
     type  = "x86-64-v2-AES"
+  }
+
+  memory {
+    dedicated = var.vm_ram
+    floating  = var_vm_ram
+  }
+
+  vga {
+    type = "serial0"
   }
 
   initialization {

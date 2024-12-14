@@ -69,6 +69,10 @@ variable "vm_ram" {
     error_message = "The dont use too much RAM"
   }
 }
+variable "vm_tags"{
+  type = list
+  default = ["terraform"]
+}
 variable "disk_size" {
   type    = number
   default = 16
