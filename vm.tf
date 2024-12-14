@@ -8,7 +8,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   node_name = var.pve_node
   migrate   = true
-  tags 	    = var.vm_tags
+  tags      = var.vm_tags
 
   agent {
     enabled = var.qemu_agent
@@ -26,7 +26,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   memory {
     dedicated = var.vm_ram
-    floating  = var_vm_ram
+    floating  = var.vm_ram
   }
 
   vga {
@@ -43,7 +43,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
     ip_config {
       ipv4 {
-        address = "${var.ip_address}"
+        address = var.ip_address
         gateway = var.gateway
       }
     }

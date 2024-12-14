@@ -17,7 +17,7 @@ variable "gateway" {
   type = string
 }
 variable "clone_id" {
-  type = number
+  type    = number
   default = 9001
 }
 variable "ip_address" {
@@ -69,8 +69,8 @@ variable "vm_ram" {
     error_message = "The dont use too much RAM"
   }
 }
-variable "vm_tags"{
-  type = list
+variable "vm_tags" {
+  type    = list(any)
   default = ["terraform"]
 }
 variable "disk_size" {
